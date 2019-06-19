@@ -1,0 +1,54 @@
+.container {
+    margin: 1em auto;
+    /* z-index: 5000; */
+  }
+  
+  .card {
+    background-color: transparent !important;
+  }
+  
+  p {
+    margin-top: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .space-top {
+    text-align: center;
+    padding: 1.5em 0;
+    font-family: 'Sofia', cursive;
+  }
+  
+  img {
+    min-width: 100px;
+    height: 150px;
+     padding-bottom: 1em; 
+   } 
+  
+   button {
+    background: #5A2F1B;
+    color: white;
+    width: 100%;
+    border: none;
+  }
+  
+  button:hover {
+    box-shadow: 0px 7px 32px -5px rgba(172,144,83,1);
+  }
+  
+  a {
+    padding-right: 2em;
+  }
+  
+  @media screen and (max-width: 300px) {
+    img {
+      padding-bottom: 4em;
+    }
+  }
+  
+  @media all and (min-width: 768px) and (max-width: 1200px) {
+    img {
+      height: 100px;
+    }
+  }
+  
+  

@@ -1,0 +1,33 @@
+@import 'https://fonts.googleapis.com/css?family=Sofia';
+
+mat-card-title{
+  cursor: pointer;
+}
+
+.home {
+  font-size: 1.5rem;
+}
+
+div {
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: white !important;
+  font-family: 'Sofia', cursive;
+}
+
+a:hover {
+  color: #BFA760 !important;
+}
+
+.logout-link {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 300px) {
+  .home {
+    font-size: 1.2rem;
+  }
+}

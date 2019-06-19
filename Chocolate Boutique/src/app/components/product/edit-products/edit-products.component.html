@@ -1,0 +1,28 @@
+<form [formGroup]="editForm" (ngSubmit)="edit()" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <h2>Edit Products</h2>
+  <mat-form-field>
+    <input formControlName="title" matInput type="text" placeholder="Title is here!">
+    <mat-label>Title</mat-label>
+    <mat-error *ngIf="editForm.get('title').hasError('required')">Title is required.</mat-error>
+    <mat-error *ngIf="editForm.get('title').hasError('minlength')">Title must be at least 3 symbols..</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="description" matInput type="text" placeholder="Description is here!">
+    <mat-label>Description</mat-label>
+    <mat-error *ngIf="editForm.get('description').hasError('required')">Description is required.</mat-error>
+    <mat-error *ngIf="editForm.get('description').hasError('minlength')">Description must be at least 10 symbols..
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="image" matInput type="text" placeholder="Image is here!">
+    <mat-label>Image Url</mat-label>
+    <mat-error *ngIf="editForm.get('image').hasError('required')">Image is required.</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <input formControlName="price" matInput placeholder="0.00" type="number" class="example-right-align">
+    <mat-label>Price</mat-label>
+    <mat-error *ngIf="editForm.get('price').hasError('required')">Price is required.</mat-error>
+    <mat-error *ngIf="editForm.get('price').hasError('min')">Price min 1!</mat-error>
+  </mat-form-field>
+  <button [disabled]="editForm.invalid" mat-raised-button type="submit">Edit</button>
+</form>

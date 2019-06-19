@@ -1,0 +1,53 @@
+<mat-nav-list class="vertical-menu">
+  <div>
+    <a class="home" routerLink="/">Chocolate Store</a>
+    <a mat-list-item routerLink="/">
+      <mat-icon>perm_identity</mat-icon>
+      Home
+    </a>
+    <a mat-list-item routerLink="/about">
+      <mat-icon>perm_identity</mat-icon>
+      About
+    </a>
+    <a mat-list-item routerLink="/contact">
+      <mat-icon>perm_identity</mat-icon>
+      Contacts
+    </a>
+    <a *ngIf="!user" mat-list-item routerLink="/login">
+      <mat-icon>account_circle</mat-icon>
+      Log In / Create account
+    </a>
+    <a *ngIf="user" mat-list-item routerLink="/product">
+      Shop
+    </a>
+    <a *ngIf="user" mat-list-item routerLink="/cart">
+      <mat-icon matBadge="{{productService.navbarCartCount}}" matBadgeColor="accent">shopping_cart</mat-icon>
+    </a>
+    <a *ngIf="user" mat-list-item>
+      <button 
+      [matMenuTriggerFor]="avatarDropDown" 
+      *ngIf="user" 
+      mat-mini-fab 
+      class="toolbar-avatar"
+      [ngStyle]="{'background-image': 'url(' + user?.photoURL + ')'}">
+      </button>
+    </a>
+  </div>
+</mat-nav-list>
+<mat-menu #avatarDropDown="matMenu">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title (click)="account()">{{user?.displayName}}</mat-card-title>
+      <mat-card-subtitle>{{user?.email}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sign Out</span>
+  </button>
+
+  <button *ngIf="authService.isAdmin | async" mat-menu-item (click)="create()">
+    <span>Create</span>
+  </button>
+</mat-menu>

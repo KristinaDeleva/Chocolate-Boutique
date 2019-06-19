@@ -1,0 +1,26 @@
+<form (ngSubmit)="submit()" [formGroup]="contactForm" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+      <input formControlName="name" matInput type="text" placeholder="Your name...">
+        <mat-hint>Enter your name.</mat-hint>
+        <mat-icon matSuffix>person</mat-icon>
+        <mat-error *ngIf="contactForm.get('name').hasError('required')">Name is required.</mat-error>
+        <mat-error *ngIf="contactForm.get('name').hasError('minlength')">Name must be at least 4 symbols.</mat-error>
+      </mat-form-field>
+  <mat-form-field>
+      <mat-label>Email</mat-label>
+    <input formControlName="email" matInput type="email" placeholder="Your email...">
+    <mat-hint>Enter a valid email address.</mat-hint>
+    <mat-icon matSuffix>email</mat-icon>
+    <mat-error *ngIf="contactForm.get('email').hasError('required')">Email is required.</mat-error>
+    <mat-error *ngIf="contactForm.get('email').hasError('email')">Email is invalid.</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-label>Message</mat-label>
+      <textarea formControlName="message" rows="5" matInput></textarea>
+      <mat-hint>Your message is here!</mat-hint>
+      <mat-icon matSuffix>message</mat-icon>
+      <mat-error *ngIf="contactForm.get('message').hasError('minlength')">Message must be at least 10 symbols.</mat-error>
+    </mat-form-field>
+    <button [disabled]="contactForm.invalid" mat-raised-button type="submit">Sent</button>
+</form>

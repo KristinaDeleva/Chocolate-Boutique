@@ -1,0 +1,81 @@
+<div class="container mt-3">
+
+  <div class="col-md order-md-1">
+    <h4 class="mb-3">Shipping Address</h4>
+    <form class="needs-validation" [formGroup]="form" (ngSubmit)="updateUserDetails()">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">First name</label>
+          <input id="firstName" class="form-control" formControlName="firstName" placeholder="Ivan">
+          <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          <div class="alert alert-danger" *ngIf="form.get('firstName').hasError('pattern')">
+            The name should be capital letter and between 3 and 20 symbols!
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Last name</label>
+          <input id="lastName" class="form-control" formControlName="lastName" placeholder="Ivanov">
+          <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          <div class="alert alert-danger" *ngIf="form.get('lastName').hasError('pattern')">
+            The last name should be capital letter and between 3 and 20 symbols!
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input id="email" class="form-control" type="email" value="{{user?.email}}" disabled>
+     </div>
+
+      <div class="mb-3">
+        <label for="address">Address</label>
+        <input id="address" class="form-control" formControlName="address" placeholder="Your Address" type="text">
+        <div class="invalid-feedback">
+            Please enter your shipping address.
+          </div>
+        <div class="alert alert-danger" *ngIf="form.get('address').hasError('minlength')">
+          The address min 10 symbols!
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="country">Country</label>
+          <select class="custom-select d-block w-100" id="country" formControlName="country">
+            <option value="">Choose...</option>
+            <option>United States</option>
+            <option>Bulgaria</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid country.
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <label for="state">State</label>
+          <select class="custom-select d-block w-100" id="state" formControlName="state">
+            <option value="">Choose...</option>
+            <option>California</option>
+            <option>Sofia</option>
+          </select>
+          <div class="invalid-feedback">
+            Please provide a valid state.
+          </div>
+        </div>
+
+        <div class="col-md-5 mb-3">
+          <label for="zip">Zip</label>
+          <input id="zip" class="form-control" formControlName="zip" placeholder="0000" type="text">
+          <div class="invalid-feedback">
+              Zip code required.
+            </div>
+        </div>
+      </div>
+      <hr class="mb-4">
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+    </form>
+  </div>

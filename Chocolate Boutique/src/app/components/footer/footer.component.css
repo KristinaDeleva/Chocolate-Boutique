@@ -1,0 +1,73 @@
+#footer {
+    background: #5A2F1B;
+    padding: 1.3em;
+}
+
+.f {
+    margin: auto;
+    max-width: 10rem;
+}
+
+.f, .f .soc, .f ul {
+    display: flex;
+}
+
+.f ul {
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.f ul li {
+    display: block;
+    list-style: none;
+    flex: 0 0 1rem;
+    text-align: center;
+}
+
+.f .soc {
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem .5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 1rem 0 white;
+    text-decoration: none;
+    background: #eee;
+}
+
+.f .soc:hover {
+    box-shadow: none;
+}
+
+.fa-facebook:hover {
+    color: blue;
+}
+
+.fa-twitter:hover {
+    color: deepskyblue;
+}
+
+.fa-instagram:hover {
+    color: lightblue;
+}
+
+a {
+    color: #000;
+}
+
+@media all and (min-width: 400px) {
+    #footer {
+        font-size: 23px;
+    }
+
+    .f .soc {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 0.2rem;
+    }
+}

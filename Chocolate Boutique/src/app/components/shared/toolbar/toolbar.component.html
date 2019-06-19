@@ -1,0 +1,59 @@
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button (click)="toggleSidenav()">
+      <mat-icon class="white-icon">menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a class="home" routerLink="/">Chocolate Store</a>
+  </div>
+  <ul
+      fxFlex 
+      fxLayout 
+      fxLayoutAlign="flex-end" 
+      fxLayoutGap="20px" 
+      fxHide.xs 
+      class="navigation-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/contact">Contacts</a></li>
+    <li><a class="log" *ngIf="!user" routerLink="/login">Log In / Create account</a></li>
+    <li></li>
+    <li><a *ngIf="user" routerLink="/product">Shop</a></li>
+    <li><a *ngIf="user" routerLink="/cart">
+      <mat-icon matBadge="{{productService.navbarCartCount}}" matBadgeColor="accent">shopping_cart</mat-icon>
+    </a></li>
+    <li>
+        <button
+        [matMenuTriggerFor]="avatarDropDown"
+        *ngIf="user"
+        mat-mini-fab
+        class="toolbar-avatar"
+        [ngStyle]="{'background-image': 'url(' + user?.photoURL + ')'}">
+        </button>
+    </li>
+  </ul>
+</mat-toolbar>
+<mat-menu 
+#avatarDropDown="matMenu">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title (click)="account()">{{user?.displayName}}</mat-card-title>
+      <mat-card-subtitle>{{user?.email}}</mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  <button
+  mat-menu-item
+  (click)="logout()">
+  <mat-icon>exit_to_app</mat-icon>
+  <span>Sign Out</span>
+  </button>
+
+  <button
+  *ngIf="authService.isAdmin | async"
+  mat-menu-item
+  (click)="create()">
+  <span>Create</span>
+  </button>
+</mat-menu>

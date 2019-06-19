@@ -1,0 +1,37 @@
+section {
+  padding: 20px;
+  background-image: url('../../../images/img8.jpg');
+  min-height: 800px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-center {
+  padding: 0;
+}
+
+.row {
+  margin-top: 200px;
+}
+
+
+button {
+  background-color: #E29096;
+  color: black;
+  border: none;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 799px) {
+  section {
+    min-height: 400px;
+  }
+
+  .row {
+    margin-top: 50px;
+  }
+} 

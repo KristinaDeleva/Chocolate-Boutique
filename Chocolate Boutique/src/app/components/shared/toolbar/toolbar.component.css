@@ -1,0 +1,72 @@
+/* Toolbar CSS */
+@import url('https://fonts.googleapis.com/css?family=Sofia');
+
+mat-toolbar {
+  font-family: 'Sofia', cursive;
+  background: #5A2F1B;
+}
+
+mat-toolbar .toolbar-avatar {
+  background-size: cover;
+  box-shadow: none;
+}
+
+mat-card-title {
+  cursor: pointer;
+}
+
+.white-icon {
+  color: white;
+}
+
+.white-icon:hover {
+  color: #BFA760;
+}
+
+.home {
+  font-size: 1.3em;
+}
+
+li {
+  margin-right: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1em;
+}
+
+a:hover {
+  color: #BFA760;
+}
+
+.log {
+  font-size: 0.8em;
+}
+
+.logout-link {
+  cursor: pointer;
+}
+
+.navigation-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (max-width: 300px) {
+  .home {
+    font-size: 1em;
+  }
+}
+
+@media all and (max-width: 680px) {
+  .home {
+    margin-right: 20px;
+  }
+
+  li {
+    margin-right: 5px; 
+  }
+}

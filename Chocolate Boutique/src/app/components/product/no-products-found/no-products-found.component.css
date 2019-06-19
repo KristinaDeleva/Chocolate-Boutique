@@ -1,0 +1,18 @@
+body {
+    background-image: url('https://st.depositphotos.com/1431107/2316/v/950/depositphotos_23163822-stock-illustration-oops-vector-smiley.jpg');
+  }
+  
+  .error-template {
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  .error-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .error-actions .btn {
+    margin-right: 10px;
+  }
+  

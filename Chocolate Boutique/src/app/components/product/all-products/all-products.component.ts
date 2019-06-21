@@ -16,8 +16,6 @@ export class AllProductsComponent implements OnInit {
   filteredProducts: any[];
   products$;
   user: firebase.User;
-  selectedBrand: 'All';
-  page = 1;
 
   constructor(
     private productService: ProductService,

@@ -5,7 +5,6 @@ import { BillingService } from 'src/app/core/services/billing.service';
 import { ProductService } from 'src/app/core/services/product.service';
 import { Router } from '@angular/router';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserDetail, User } from 'src/app/components/shared/models/user';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -14,11 +13,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./billing-details.component.css']
 })
 export class BillingDetailsComponent implements OnInit {
-  userDetails: User;
 	products: Product[];
 	form: FormGroup;
 	user: firebase.User;
-	// userDetail: UserDetail;
   
   constructor(
 		private billingService: BillingService,
@@ -53,7 +50,7 @@ export class BillingDetailsComponent implements OnInit {
 
   updateUserDetails() {
 		const data = this.form.value;
-		console.log(data);
+		//console.log(data);
 
 		data['email'] = this.user.email;
 		data['userId'] = this.user.uid;

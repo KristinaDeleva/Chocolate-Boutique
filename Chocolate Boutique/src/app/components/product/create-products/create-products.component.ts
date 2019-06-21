@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/core/services/product.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-create-products',
@@ -12,18 +11,13 @@ import { take } from 'rxjs/operators';
 })
 export class CreateProductsComponent implements OnInit {
   createForm: FormGroup;
-  product = {};
-  id;
-  isNew;
   
   constructor(
     private router: Router,
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private snackbar: MatSnackBar,
-    private productService: ProductService) {
-    this.id = this.route.snapshot.paramMap.get('id');
-  }
+    private productService: ProductService) {  }
 
 
   ngOnInit() {

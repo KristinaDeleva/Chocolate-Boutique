@@ -84,7 +84,7 @@ Developing a Chocolate-Boutique(Ecommerce) Application using Angular7.
             -id: true
     ```
 
-    Now you can able to access the Admin Privileges like `Creating Product, Removing Product, etc..`
+    Now you can able to access the Admin Privileges like `Editing Product, Removing Product, etc..`
 
 10. Run the Server.
 
